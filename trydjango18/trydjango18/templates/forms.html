@@ -4,18 +4,13 @@
     <meta content="">
     <style></style>
   </head>
-	<body>
-		<h2> {{ title }} </h2>
-		{{ user }}
-		{{ request.user }}
+  <body>
+		
 	
 		<form method='POST' action=''>{% csrf_token %}
 		{{ form.as_p }}
 		
-		<input type='submit' value='Sign Up' />
+		<input type='submit' value='Submit' />
 		<!--<input type='text'>
-		
-		!-->
-		
-	</body>
+  </body>
 </html>
