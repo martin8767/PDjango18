@@ -42,7 +42,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #apps de terceros
+    'crispy_forms',
+    #mis apps
     'newsletter',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -107,7 +111,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "static_root")
+#STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "static_root") ## development
 
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, "static_in_pro", "our_static"),
@@ -118,17 +122,7 @@ STATICFILES_DIRS = (
 ## python manage.py collectstatic
 
 
+MEDIA_URL = '/media/'
+#MEDIA_ROOT = STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "media_root")  ## development
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
