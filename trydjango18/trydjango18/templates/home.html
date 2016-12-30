@@ -4,29 +4,42 @@
 
 {% block head_title %} Welcome I {% endblock %}
 
-{% block jumbotron %}
-
-<!--hello hello -->
-{{ block.super }}
+<style>
+{% block style %}
 
 
 {% endblock %}
+</style>
+
+{% block jumbotron %}
+{{ block.super }}
+{% endblock %}
+
 
 {% block content %}
 <div class="row">
-  <div class="col-sm-6 col-md-3">
 
-		<h2> {{ title }} </h2>
-		{{ user }}
-		{{ request.user }}
+      <div class="col-sm-3 pull-right">
 
-		<form method='POST' action=''>{% csrf_token %}
-		{{ form|crispy }}
+    		<p class='lead text-align'> {{ title }} </p>
 
-		<input class='btn btn-primary' type='submit' value='Sign Up' />
-		<!--<input type='text'>!-->
-        </form>
-    </div>
+
+    		<form method='POST' action=''>{% csrf_token %}
+    		{{ form|crispy }}
+
+    		<input class='btn btn-primary' type='submit' value='Sign Up' />
+    		<!--<input type='text'>!-->
+            </form>
+        </div>
+        <div class='col-sm-3'>
+            <p class='lead text-align'>Build with Django &amp; Bootstrap</p>
+        </div>
+        <div class='col-sm-3'>
+            <p class='lead text-align'>Build with Django &amp; Bootstrap</p>
+        </div>
+        <div class='col-sm-3'>
+            <p class='lead text-align'>Build with Django &amp; Bootstrap</p>
+        </div>
 
 </div>
 
