@@ -13,66 +13,69 @@
 {% endblock %}
 </style>
 
-{% block jumbotron %}
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class='col-xs-6'>
 
-                <!-- Main component for a primary marketing message or call to action -->
 
-                  <h1> Try Django 1.8 </h1>
-                  <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-                  <p>To see the difference between static and fixed top navbars, just scroll.</p>
-                  <p>
-                    <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
-                  </p>
 
-           </div>
-           <div class='col-sm-6' style="background-color:black; height:315px" >
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/KdPf-pNK1s0" frameborder="0" allowfullscreen></iframe>
-           </div>
-        </div>
+    {% block jumbotron %}
+        {% if request.user.is_authenticated %}
+            <h1 class="text-align-center"> You are logged in </h1>
+        {% else %}
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row">
+                        <div class='col-xs-6'>
+
+                            <!-- Main component for a primary marketing message or call to action -->
+
+                              <h1> Try Django 1.8 </h1>
+                              <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+                              <p>To see the difference between static and fixed top navbars, just scroll.</p>
+                              <p>
+                                <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+                              </p>
+
+                       </div>
+                       <div class='col-sm-6' style="background-color:black; height:315px" >
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/KdPf-pNK1s0" frameborder="0" allowfullscreen></iframe>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <!-- {{ block.super }} -->
+        {% endif %}
+    {% endblock %}
+
+
+    {% block content %}
+    <div class="row">
+
+          <div class="col-sm-3 pull-right">
+
+               <p class='lead text-align-center'> {{ title }} </p>
+
+
+               <form method='POST' action=''>{% csrf_token %}
+               {{ form|crispy }}
+
+               <input class='btn btn-primary' type='submit' value='Sign Up' />
+               <!--<input type='text'>!-->
+                </form>
+            </div>
+            <div class='col-sm-3'>
+                <p class='lead text-align-center'>Build with Django &amp; Bootstrap</p>
+                <img src="{% static 'img/sape.jpeg' %}" class="img-responsive" />
+            </div>
+            <div class='col-sm-3'>
+                <p class='lead text-align-center'>Build with Django &amp; Bootstrap</p>
+
+            </div>
+            <div class='col-sm-3'>
+                <p class='lead text-align-center'> Always open source</p>
+                <span class "fa-stack fa-lg fa-5x">
+                    <i class="fa fa-circle-o-notch fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x"></i>
+                </span>
+            </div>
+
     </div>
-</div>
-{{ block.super }}
-{% endblock %}
-
-{% if request.user.is_authenticated %}
-{% block content %}
-<div class="row">
-
-      <div class="col-sm-3 pull-right">
-
-    		<p class='lead text-align-center'> {{ title }} </p>
-
-
-    		<form method='POST' action=''>{% csrf_token %}
-    		{{ form|crispy }}
-
-    		<input class='btn btn-primary' type='submit' value='Sign Up' />
-    		<!--<input type='text'>!-->
-            </form>
-        </div>
-        <div class='col-sm-3'>
-            <p class='lead text-align-center'>Build with Django &amp; Bootstrap</p>
-            <img src="{% static 'img/sape.jpeg' %}" class="img-responsive" />
-        </div>
-        <div class='col-sm-3'>
-            <p class='lead text-align-center'>Build with Django &amp; Bootstrap</p>
-
-        </div>
-        <div class='col-sm-3'>
-            <p class='lead text-align-center'> Always open source</p>
-            <span class "fa-stack fa-lg fa-5x">
-                <i class="fa fa-circle-o-notch fa-stack-2x"></i>
-                <i class="fa fa-github fa-stack-1x"></i>
-            </span>
-        </div>
-
-</div>
-
-{% endblock %}
-{% else %}
-
-{% endif %}
+    {% endblock %}

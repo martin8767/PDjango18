@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-#from django.conf.urls.static import static
+from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
@@ -12,7 +12,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
-] ##
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:  ## en development lo ponemos en false y se activa
     #urlpatterns += static(settings.STATIC_URL, document_root=settings.static_ROOT)

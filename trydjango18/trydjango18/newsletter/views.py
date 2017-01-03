@@ -3,7 +3,7 @@ from django.conf import settings
 
 from django.shortcuts import render
 from .forms import SignUpForm, ContactForm
-
+from .models import SignUp
 
 # Create your views here.
 def home(request):
@@ -35,9 +35,11 @@ def home(request):
 		context = {
 			"title": "gracias",
 		}
-	if request.user.is_authenticated() and request.user.is_staff:
+
+	if request.user.is_authenticated and request.user.is_staff:
+		queryset = SignUp.objects.all().order_by("-timestamp")
 		context = {
-			"queryset": [123,456]
+			"queryset": queryset
 		}
 
 	return render(request, "home.html", context)
