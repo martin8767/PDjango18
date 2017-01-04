@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
 
-    <title> {% block head_title %} {% endblock %} MVP Landing</title>
+    <title> {% block head_title %} {% endblock %} Lecciones kame</title>
 
     {% include 'head_css.html' %}
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -25,7 +25,14 @@
   </head>
 
   <body>
-
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
 
 
       <!-- agrego la top navbar -->
@@ -34,41 +41,33 @@
       <div class="container-fluid">
           <div class="row">
               <div class="col-sm-3 col-lg-2">
-                  {% include 'sidebar.html' %} <!-- ya no es necesario aca -->
+                  {% include 'sidebar.html' %}
               </div>
               <div class="col-sm-9 col-lg-10">
                   <!-- your page content -->
-                  {% block jumbotron %}
+                  {% block leccion1vocabulario %}
+
                   {% endblock %}
 
-                  <div class="container">
+                  {% block leccion1lectura %}
+
+                  {% endblock %}
+
+                  {% block leccion1practica %}
+
+                  {% endblock %}
+
+                  {% block leccion1ejercicios %}
+
+                  {% endblock %}
 
 
-
-
-
-                      {% if request.user.is_authenticated %}
-                          <h1> Welcome Staff </h1>
-                              <table class="table">
-                              {% for instance in queryset %}
-                                  <tr>
-                                      <td> {{forloop.counter }}</td>
-                                      <td> {{ instance.email }}</td>
-                                      <td> {{ instance.full_name }}</td>
-                                      <td> {{ instance.timestamp|timesince }}</td>
-                                  </tr>
-                                  {% endfor %}
-                              </table>
-                         {% else %}
-
-                       {% block content %}
-
-
-
-
-                       {% endblock %}
-                       {% endif %}
-                  </div> <!-- /container -->
+                  <div class='container'>
+                      <div class='col-sm-6 col-sm-offset-3'>
+                          <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                          <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+                      </div>
+                </div>
 
             </div>
         </div>
