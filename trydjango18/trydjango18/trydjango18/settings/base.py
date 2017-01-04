@@ -117,14 +117,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "static_root") ## developm
 
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, "static_in_pro", "our_static"),
-	#'/var/www/static/',
+	'/var/www/static/',
 )
 
 
 ## python manage.py collectstatic
 
 
-MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/'
 #MEDIA_ROOT = STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "media_root")  ## development
 
 #Crispy form tags settings

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    {% include 'javascript.html' %}
+    
     <title> {% block head_title %} {% endblock %} MVP Landing</title>
 
     {% include 'head_css.html' %}
@@ -38,43 +38,56 @@
       <!-- agrego la top navbar -->
       {% include 'navbar.html' %}
 
-      {% block jumbotron %}
-      {% endblock %}
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-3 col-lg-2">
+                  {% include 'sidebar.html' %}
+              </div>
+              <div class="col-sm-9 col-lg-10">
+                  <!-- your page content -->
+                  {% block jumbotron %}
+                  {% endblock %}
 
-    <div class="container">
-
-
-
-
-
-        {% if request.user.is_authenticated %}
-            <h1> Welcome Staff </h1>
-                <table class="table">
-                {% for instance in queryset %}
-                    <tr>
-                        <td> {{forloop.counter }}</td>
-                        <td> {{ instance.email }}</td>
-                        <td> {{ instance.full_name }}</td>
-                        <td> {{ instance.timestamp|timesince }}</td>
-                    </tr>
-                    {% endfor %}
-                </table>
-           {% else %}
-
-         {% block content %}
+                  <div class="container">
 
 
 
 
-         {% endblock %}
-         {% endif %}
-    </div> <!-- /container -->
-    <div class='container'>
-        <div class='col-sm-6 col-sm-offset-3'>
-            <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-        <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+
+                      {% if request.user.is_authenticated %}
+                          <h1> Welcome Staff </h1>
+                              <table class="table">
+                              {% for instance in queryset %}
+                                  <tr>
+                                      <td> {{forloop.counter }}</td>
+                                      <td> {{ instance.email }}</td>
+                                      <td> {{ instance.full_name }}</td>
+                                      <td> {{ instance.timestamp|timesince }}</td>
+                                  </tr>
+                                  {% endfor %}
+                              </table>
+                         {% else %}
+
+                       {% block content %}
+
+
+
+
+                       {% endblock %}
+                       {% endif %}
+                  </div> <!-- /container -->
+                  <div class='container'>
+                      <div class='col-sm-6 col-sm-offset-3'>
+                          <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                          <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+
+
 
 
     {% include 'javascript.html' %}
