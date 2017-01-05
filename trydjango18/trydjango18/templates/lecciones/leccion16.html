@@ -1,0 +1,40 @@
+{% extends "lecciones.html" %}
+
+
+
+{% block leccion1vocabulario %}
+{% if "/leccion1/vocab" in request.get_full_path %}
+
+    <h2>leccion1 vocabulario</h2>
+
+{% endif %}
+{% endblock %}
+
+
+{% block leccion1lectura %}
+{% if "/leccion1/lectura" in request.get_full_path %}
+
+    <h2>leccion1 lectura</h2>
+
+{% endif %}
+{% endblock %}
+
+
+
+{% block leccion1practica %}
+{% if "/leccion1/practica" in request.get_full_path %}
+
+    <h2>leccion1 practica </h2>
+
+{% endif %}
+{% endblock %}
+
+
+
+{% block leccion1ejercicios %}
+{% if "/leccion1/ejercicios" in request.get_full_path %}
+
+    <h2>leccion1 ejercicios</h2>
+
+{% endif %}
+{% endblock %}

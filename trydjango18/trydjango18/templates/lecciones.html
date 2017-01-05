@@ -44,24 +44,26 @@
                   {% include 'sidebar.html' %}
               </div>
               <div class="col-sm-9 col-lg-10">
+                  {% block lecciones %}
+                  <h1> Introduccion a las Lecciones </h1>
                   <!-- your page content -->
-                  {% block leccion1vocabulario %}
+                      {% block leccion1vocabulario %}
 
-                  {% endblock %}
+                      {% endblock %}
 
-                  {% block leccion1lectura %}
+                      {% block leccion1lectura %}
 
-                  {% endblock %}
+                      {% endblock %}
 
-                  {% block leccion1practica %}
+                      {% block leccion1practica %}
 
-                  {% endblock %}
+                      {% endblock %}
 
-                  {% block leccion1ejercicios %}
+                      {% block leccion1ejercicios %}
 
-                  {% endblock %}
+                      {% endblock %}
 
-
+                 {% endblock %}
                   <div class='container'>
                       <div class='col-sm-6 col-sm-offset-3'>
                           <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
