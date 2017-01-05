@@ -22,6 +22,37 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        body {
+            background-image: url("{% static 'img/prueba.jpg' %}");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+        .prueba {
+            max-height: 360px;
+            max-width:   1080px;
+        }
+        .container {
+    background: rgb(60, 60, 60);
+    background: rgba(60, 60, 60, 0.0);
+    border: 0px solid rgb(0, 0, 0);
+}
+.navbar-default sidebar {
+    background: rgb(60, 60, 60);
+    background: rgba(60, 60, 60, 0.0);
+    border: 0px solid rgb(0, 0, 0);
+}
+
+pre {
+    background: rgb(60, 60, 60);
+    background: rgba(60, 60, 60, 0.0);
+    border: 0px solid rgb(0, 0, 0);
+}
+    </style>
+
   </head>
 
   <body>
@@ -40,12 +71,16 @@
 
       <div class="container-fluid">
           <div class="row">
+              <div class="col-sm-2 col-lg-2">
+
+              </div>
               <div class="col-sm-3 col-lg-2">
                   {% include 'sidebar.html' %}
               </div>
-              <div class="col-sm-9 col-lg-10">
+              <div class="col-sm-6 col-lg-6">
+                  <div class="container ">
                   {% block lecciones %}
-                  <h1> Introduccion a las Lecciones </h1>
+                  <h1 class="text-align-center"> Introduccion a las Lecciones </h1>
                   <!-- your page content -->
                       {% block leccion1vocabulario %}
 
@@ -64,12 +99,18 @@
                       {% endblock %}
 
                  {% endblock %}
+                 <div class="col-sm-2 col-lg-2">
+
+                 </div>
+                 {% if "lectura" in request.get_full_path or "vocabulario" in request.get_full_path or "ejercicios" in request.get_full_path or "practica" in request.get_full_path %}
                   <div class='container'>
-                      <div class='col-sm-6 col-sm-offset-3'>
+                      <div class='col-sm-6'>
                           <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                           <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
                       </div>
                 </div>
+                {% endif %}
+            </div>
 
             </div>
         </div>

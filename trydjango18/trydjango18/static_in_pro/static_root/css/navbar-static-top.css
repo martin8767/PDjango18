@@ -1,5 +1,6 @@
 body {
-  min-height: 1000px;
+  min-height: 900px;
+  max-width:   1920px;
 }
 
 .navbar-static-top {

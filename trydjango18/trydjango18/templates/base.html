@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
 
-    <title> {% block head_title %} {% endblock %} MVP Landing</title>
+    <title> {% block head_title %} {% endblock %} NIHONGO KAME</title>
 
     {% include 'head_css.html' %}
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -22,20 +22,35 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+    body {
+        background-image: url("{% static 'img/mount-fuji-8.jpg' %}");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+    }
+    .prueba {
+        max-height: 360px;
+        max-width:   1080px;
+    }
+</style>
+
   </head>
 
   <body>
 
 
-
+      <div class="prueba">
+          <img src="{% static 'img/oedo.jpg' %}" />
+      </div>
       <!-- agrego la top navbar -->
       {% include 'navbar.html' %}
 
-      <div class="container-fluid">
+      <div class="container">
           <div class="row">
-              <div class="col-sm-3 col-lg-2">
-                  {% include 'sidebar.html' %} <!-- ya no es necesario aca -->
-              </div>
+
               <div class="col-sm-9 col-lg-10">
                   <!-- your page content -->
                   {% block jumbotron %}

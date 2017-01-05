@@ -1,24 +1,13 @@
-<nav class="navbar navbar-default navbar-fixed-side">
+{%  load staticfiles %}
   <!-- normal collapsible navbar markup -->
-  <div class="navbar-default sidebar" role="navigation">
-              <div class="sidebar-nav navbar-collapse">
+  <div class="navbar-default sidebar"  id="sss" role="navigation">
+              <div class="sidebar-nav navbar-collapse "list-group-item"">
                   <ul class="nav" id="side-menu">
-                      <li class="sidebar-search">
-                          <div class="input-group custom-search-form">
-                              <input type="text" class="form-control" placeholder="Search...">
-                              <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">
-                                  <i class="fa fa-search"></i>
-                              </button>
-                          </span>
-                          </div>
-                          <!-- /input-group -->
+                      <li>
+                          <a href='{% url "homel" %}' class="list-group-item"><i class="fa fa-university fa-fw"></i> Lecciones</a>
                       </li>
                       <li>
-                          <a href='{% url "homel" %}'><i class="fa fa-university fa-fw"></i> Lecciones</a>
-                      </li>
-                      <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 1<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 1<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href='{% url "leccion1v" %}'>Vocabulario</a>
@@ -37,7 +26,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 2<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 2<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                             <li>
                                 <a href='{% url "leccion2v" %}'>Vocabulario</a>
@@ -55,7 +44,7 @@
                           </ul>
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 3<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 3<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href='{% url "leccion3v" %}'>Vocabulario</a>
@@ -73,7 +62,7 @@
                           </ul>
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 4<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 4<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href='{% url "leccion4v" %}'>Vocabulario</a>
@@ -92,7 +81,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 5<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 5<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Second Level Item</a>
@@ -123,7 +112,7 @@
                       </li>
 
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 6<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 6<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -142,7 +131,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 7<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 7<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -161,7 +150,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 8<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 8<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -180,7 +169,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 9<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 9<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -199,7 +188,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 10<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 10<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -218,7 +207,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 11<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 11<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -237,7 +226,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 12<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 12<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -256,7 +245,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 13<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 13<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -275,7 +264,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 14<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 14<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -294,7 +283,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 15<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 15<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -313,7 +302,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 16<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 16<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -332,7 +321,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 17<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 17<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -351,7 +340,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 18<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 18<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -370,7 +359,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 19<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 19<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -389,7 +378,7 @@
                           <!-- /.nav-second-level -->
                       </li>
                       <li>
-                          <a href="#"><i class="fa fa-list fa-fw"></i> Lección 20<span class="fa arrow"></span></a>
+                          <a href="#" class="list-group-item"><i class="fa fa-list fa-fw"></i> Lección 20<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                               <li>
                                   <a href="#">Vocabulario</a>
@@ -412,4 +401,3 @@
               <!-- /.sidebar-collapse -->
           </div>
           <!-- /.navbar-static-side -->
-</nav>
